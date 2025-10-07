@@ -1,7 +1,7 @@
 import json  
   
 # Load existing data  
-with open('family_data.json', 'r') as file:  
+with open('pill_intake.json', 'r') as file:  
     data = json.load(file)  
   
 # Make your updates (this is just an example)  
@@ -19,5 +19,5 @@ new_entry = {
 data["Attività Familiari"].append(new_entry)  
   
 # Save updated data  
-with open('family_data.json', 'w') as file:  
+with open('pill_intake.json', 'w') as file:  
     json.dump(data, file, indent=4)  
