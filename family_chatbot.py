@@ -7,11 +7,17 @@ from datetime import datetime, date
 DATA_FILE = "pill_intake.json"
 
 # Load existing data from JSON file
+
 def load_data():
     if os.path.exists(DATA_FILE):
-        with open(DATA_FILE, "r") as f:
-            return json.load(f)
-    return []  # List of entries, each entry is a dict with 'date' and 'pills_taken'
+        try:
+            with open(DATA_FILE, "r") as f:
+                return json.load(f)
+        except json.JSONDecodeError:
+            # File exists but is empty or corrupted
+            return []
+    return []
+
 
 # Save data to JSON file
 def save_data(data):
