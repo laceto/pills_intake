@@ -1,1 +1,6 @@
-
+[
+    {
+        "date": "2025-10-06",
+        "pills_taken": [true, false, true]
+    }
+]
