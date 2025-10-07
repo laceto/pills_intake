@@ -10,12 +10,12 @@ DATA_FILE = "pill_intake.json"
 
 def load_data():
     if os.path.exists(DATA_FILE):
-        try:
-            with open(DATA_FILE, "r") as f:
+        with open(DATA_FILE, "r") as f:
+            try:
                 return json.load(f)
-        except json.JSONDecodeError:
-            # File exists but is empty or corrupted
-            return []
+            except json.JSONDecodeError:
+                # File is empty or corrupted, return empty list
+                return []
     return []
 
 
